@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import useDebouceSearch from '../hooks/useDebouceSearch';
 import  useFetch  from "../Hooks/useFetch";
 import { useNavigate  } from 'react-router-dom';
 
@@ -27,8 +26,6 @@ export async function preLoadFilters() {
 export default function Home() {
   const [pagination, setPagination] = useState(1);
   const [search, setSearch] = useState('');
-
-  const debouncedSearch = useDebouceSearch(search);
 
   const handleSearch = (event) => {
     setSearch(event.currentTarget.value);
